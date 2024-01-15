@@ -8,6 +8,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import static io.restassured.RestAssured.given;
 
@@ -34,7 +36,7 @@ public class ConvertAmountsTest extends AbstractTest {
                 .queryParam("sourceUnit", "cups")
                 .queryParam("targetUnit", "grams")
                 .when()
-                .get(getBaseUrl()+"recipes/convert")
+                .get(getBaseUrl() + "recipes/convert")
                 .then()
                 .statusCode(200)
                 .time(Matchers.lessThan(10000l))
@@ -46,8 +48,16 @@ public class ConvertAmountsTest extends AbstractTest {
                 "GET",
                 LocalDateTime.now().toString());
 
-        Assertions.assertEquals(response.body().as(ConvertAmountsDto.class).getTargetAmount(),312.5);
+        Assertions.assertEquals(response.body().as(ConvertAmountsDto.class).getTargetAmount(), 312.5);
 
 
+    }
+
+    @Test
+    @DisplayName("Promo Test")
+    void checkException() {
+        logger.info("Start test");
+        List<String> towns = new ArrayList<>();
+        Assertions.assertEquals("Moscow", towns.get(0));
     }
 }

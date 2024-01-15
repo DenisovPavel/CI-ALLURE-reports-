@@ -138,7 +138,7 @@
                     закомментируйте строку-->
                     <!--<reportVersion>2.4.1</reportVersion>-->
                     <!-- Добавим адрес директории для генератора отчета -->
-                    <buildDirectory>C:\Users\kravm\IdeaProjects\auto\</buildDirectory>
+                    <buildDirectory>D:\ProgrammingCodding\ReportsAndCI\CountiniousIntegrationAndReports</buildDirectory>
                 </configuration>
             </plugin>
             <plugin>
